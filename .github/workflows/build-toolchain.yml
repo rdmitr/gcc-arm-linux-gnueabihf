@@ -38,9 +38,7 @@ jobs:
           tar -cjf x-tools.tbz2 x-tools 
 
       - name: Archive toolchain artifacts
-        run: |
-          cd ~
         uses: actions/upload-artifact@v4
         with:
           name: x-tools
-          path: x-tools
+          path: ~/x-tools
