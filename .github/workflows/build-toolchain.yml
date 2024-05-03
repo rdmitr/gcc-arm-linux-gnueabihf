@@ -1,0 +1,43 @@
+name: Build Toolchain with Crosstool-NG
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget
+
+      - name: Download crosstool-ng
+        run: |
+          wget http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.26.0.tar.xz
+          tar -xf crosstool-ng-1.26.0.tar.xz
+
+      - name: Configure and build crosstool-ng
+        run: |
+          cd crosstool-ng-1.26.0
+          ./configure --enable-local
+          make
+
+      - name: Configure and build toolchain
+        run: |
+          cp ../config ./.config
+          ./ct-ng build
+
+      - name: Make toolchain archive
+        run: |
+          cd ..
+          tar -cjf x-tools.tbz2 x-tools 
+
+      - name: Archive toolchain artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: x-tools
+          path: x-tools
