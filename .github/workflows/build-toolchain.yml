@@ -28,12 +28,13 @@ jobs:
 
       - name: Configure and build toolchain
         run: |
+          cd crosstool-ng-1.26.0
           cp ../config ./.config
           ./ct-ng build
 
       - name: Make toolchain archive
         run: |
-          cd ..
+          cd ~
           tar -cjf x-tools.tbz2 x-tools 
 
       - name: Archive toolchain artifacts
