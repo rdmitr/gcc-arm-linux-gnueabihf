@@ -34,11 +34,11 @@ jobs:
 
       - name: Make toolchain archive
         run: |
-          cd ~
-          tar -cjf x-tools.tbz2 x-tools 
+          cd ~/x-tools
+          tar -cjf armv6-unknown-linux-gnueabihf.tar.bz2 armv6-unknown-linux-gnueabihf
 
       - name: Archive toolchain artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: x-tools
-          path: ~/x-tools.tbz2
+          name: armv6-unknown-linux-gnueabihf
+          path: ~/x-tools/armv6-unknown-linux-gnueabihf.tar.bz2
