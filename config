@@ -120,7 +120,7 @@ CT_LOG_EXTRA=y
 # CT_LOG_DEBUG is not set
 CT_LOG_LEVEL_MAX="EXTRA"
 # CT_LOG_SEE_TOOLS_WARN is not set
-CT_LOG_PROGRESS_BAR=n
+# CT_LOG_PROGRESS_BAR is not set
 CT_LOG_TO_FILE=y
 CT_LOG_FILE_COMPRESS=y
 # end of Paths and misc options
@@ -447,10 +447,10 @@ CT_GLIBC_PATCH_ORDER="global"
 # CT_GLIBC_V_2_34 is not set
 # CT_GLIBC_V_2_33 is not set
 # CT_GLIBC_V_2_32 is not set
-# CT_GLIBC_V_2_31 is not set
+CT_GLIBC_V_2_31=y
 # CT_GLIBC_V_2_30 is not set
 # CT_GLIBC_V_2_29 is not set
-CT_GLIBC_V_2_28=y
+# CT_GLIBC_V_2_28 is not set
 # CT_GLIBC_V_2_27 is not set
 # CT_GLIBC_V_2_26 is not set
 # CT_GLIBC_V_2_25 is not set
@@ -458,7 +458,7 @@ CT_GLIBC_V_2_28=y
 # CT_GLIBC_V_2_23 is not set
 # CT_GLIBC_V_2_19 is not set
 # CT_GLIBC_V_2_17 is not set
-CT_GLIBC_VERSION="2.28"
+CT_GLIBC_VERSION="2.31"
 CT_GLIBC_MIRRORS="$(CT_Mirrors GNU glibc)"
 CT_GLIBC_ARCHIVE_FILENAME="@{pkg_name}-@{version}"
 CT_GLIBC_ARCHIVE_DIRNAME="@{pkg_name}-@{version}"
@@ -474,14 +474,14 @@ CT_GLIBC_2_34_or_older=y
 CT_GLIBC_older_than_2_34=y
 CT_GLIBC_2_32_or_older=y
 CT_GLIBC_older_than_2_32=y
+CT_GLIBC_2_31_or_later=y
 CT_GLIBC_2_31_or_older=y
-CT_GLIBC_older_than_2_31=y
-CT_GLIBC_2_30_or_older=y
-CT_GLIBC_older_than_2_30=y
-CT_GLIBC_2_29_or_older=y
-CT_GLIBC_older_than_2_29=y
+CT_GLIBC_later_than_2_30=y
+CT_GLIBC_2_30_or_later=y
+CT_GLIBC_later_than_2_29=y
+CT_GLIBC_2_29_or_later=y
+CT_GLIBC_later_than_2_28=y
 CT_GLIBC_2_28_or_later=y
-CT_GLIBC_2_28_or_older=y
 CT_GLIBC_later_than_2_27=y
 CT_GLIBC_2_27_or_later=y
 CT_GLIBC_later_than_2_26=y
@@ -503,7 +503,6 @@ CT_GLIBC_DEP_BINUTILS=y
 CT_GLIBC_DEP_GCC=y
 CT_GLIBC_DEP_PYTHON=y
 CT_GLIBC_DEP_MAKE_4_3=y
-CT_GLIBC_SPARC_ALLOW_V7=y
 CT_THREADS="nptl"
 CT_GLIBC_BUILD_SSP=y
 CT_GLIBC_HAS_LIBIDN_ADDON=y
@@ -514,7 +513,7 @@ CT_GLIBC_EXTRA_CONFIG_ARRAY=""
 CT_GLIBC_CONFIGPARMS=""
 CT_GLIBC_ENABLE_DEBUG=y
 CT_GLIBC_EXTRA_CFLAGS=""
-CT_GLIBC_ENABLE_OBSOLETE_RPC=y
+# CT_GLIBC_ENABLE_OBSOLETE_RPC is not set
 # CT_GLIBC_DISABLE_VERSIONING is not set
 CT_GLIBC_OLDEST_ABI=""
 CT_GLIBC_FORCE_UNWIND=y
@@ -580,8 +579,6 @@ CT_GCC_PATCH_ORDER="global"
 CT_GCC_V_8=y
 # CT_GCC_V_7 is not set
 # CT_GCC_V_6 is not set
-# CT_GCC_V_5 is not set
-# CT_GCC_V_4_9 is not set
 CT_GCC_VERSION="8.5.0"
 CT_GCC_MIRRORS="$(CT_Mirrors GNU gcc/gcc-${CT_GCC_VERSION}) $(CT_Mirrors sourceware gcc/releases/gcc-${CT_GCC_VERSION})"
 CT_GCC_ARCHIVE_FILENAME="@{pkg_name}-@{version}"
@@ -604,8 +601,10 @@ CT_GCC_later_than_7=y
 CT_GCC_7_or_later=y
 CT_GCC_later_than_6=y
 CT_GCC_6_or_later=y
+CT_GCC_REQUIRE_6_or_later=y
 CT_GCC_later_than_5=y
 CT_GCC_5_or_later=y
+CT_GCC_REQUIRE_5_or_later=y
 CT_GCC_later_than_4_9=y
 CT_GCC_4_9_or_later=y
 CT_GCC_REQUIRE_4_9_or_later=y
