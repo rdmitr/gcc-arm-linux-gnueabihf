@@ -71,6 +71,9 @@ jobs:
           path: artifacts
           merge-multiple: true
 
+      - name: Display structure of downloaded files
+        run: ls -R artifacts
+
       - name: Publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
