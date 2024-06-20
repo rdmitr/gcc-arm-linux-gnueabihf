@@ -57,6 +57,10 @@ jobs:
 
     needs: build
 
+    permissions:
+      contents: write
+      packages: read
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
