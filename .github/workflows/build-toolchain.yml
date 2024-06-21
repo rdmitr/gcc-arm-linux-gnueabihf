@@ -84,7 +84,7 @@ jobs:
             --verify-tag                                \
             ./artifacts/*
           else
-            gh release create                           \
+            gh release create "${{ github.sha }}"       \
             --title="ARM-GCC ${{ github.ref_name }}"    \
             --draft                                     \
             ./artifacts/*
